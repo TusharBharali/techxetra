@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>TechXetra 2026 | The Portal of Time</title>
+    <meta name="description" content="TechXetra 2026 - The Annual National Technical Festival of Tezpur University.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syncopate:wght@700;800&family=Orbitron:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Ambient Cosmic Void & Celestial Orbit Rings -->
+    <div class="cosmic-bg">
+        <div class="celestial-rings" id="celestialRings"></div>
+        <div class="cosmic-grid"></div>
+    </div>
+
+    <!-- Fixed Header / Top Bar -->
+    <header class="top-bar">
+        <div class="brand-badge">TechXetra &bull; Tezpur University</div>
+
+        <!-- Audio Status / Mute Button -->
+        <button class="audio-toggle" id="audioToggle" aria-label="Toggle Sound">
+            <div class="audio-waves" id="audioWaves">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+            </div>
+            <span class="audio-label" id="audioLabel">AUDIO</span>
+        </button>
+    </header>
+
+    <!-- Intense Audio (Trimmed directly from 13.0s of the master video) -->
+    <audio id="intenseAudio" src="audio.mp3" preload="auto" loop></audio>
+
+    <!-- Audio Activation Banner (Shown gracefully if browser policy blocks sound before user tap) -->
+    <div class="audio-banner hidden" id="audioBanner">
+        <span class="banner-pulse"></span>
+        <span class="banner-text">🔊 Tap anywhere to enable sound</span>
+    </div>
+
+    <!-- MAIN PINNED TIME PORTAL STAGE -->
+    <main class="cinematic-wrapper">
+        <section class="pin-container" id="pinContainer">
+
+            <!-- North Star Circumpolar Starfield Canvas (Directly on Pinned Stage) -->
+            <canvas id="starfieldCanvas" class="starfield-canvas"></canvas>
+
+            <div class="stage" id="stage">
+
+                <!-- North Star Radiant Sparkle & Flare -->
+                <div class="north-star-sparkle" id="northStarSparkle"></div>
+
+                <!-- Cosmic Portal Flare Behind The Aperture of the X -->
+                <div class="portal-glow" id="portalGlow"></div>
+
+                <!-- YEARS PORTAL (2015 -> 2016 -> 2017 -> 2024 -> 2026?) -->
+                <div class="years-portal" id="yearsPortal">
+                    <div class="year-item year-silver" id="year2015">2015</div>
+                    <div class="year-item year-silver" id="year2016">2016</div>
+                    <div class="year-item year-silver" id="year2017">2017</div>
+                    <div class="year-item year-silver" id="year2024">2024</div>
+
+                    <!-- 2026? with the dramatic red question mark (appears alone in full glory) -->
+                    <div class="year-item year-red" id="year2026">
+                        <span class="year-digits">2026</span><span class="year-q">?</span>
+                    </div>
+                </div>
+
+                <!-- FOREGROUND METALLIC TECHXETRA LOGO -->
+                <div class="logo-container" id="logoContainer">
+                    <img src="tech_layer.png" alt="TECH" class="logo-layer layer-tech" id="logoTech">
+                    <img src="x_layer.png" alt="X" class="logo-layer layer-x" id="logoX">
+                    <img src="etra_layer.png" alt="ETRA" class="logo-layer layer-etra" id="logoEtra">
+                </div>
+
+                <!-- COMING SOON FINALE (Appears strictly AFTER 2026? dissolves; zero collision) -->
+                <div class="coming-soon-wrapper" id="comingSoonWrapper">
+                    <div class="final-badge">Annual Tech Festival</div>
+                    <h1 class="title-text">COMING SOON</h1>
+                    <p class="subtitle-text">Tezpur University</p>
+
+                    <!-- COUNTDOWN TIMER TO 23 OCT 12:00 AM -->
+                    <div class="countdown-wrapper" id="countdownWrapper">
+                        <div class="countdown-timer" id="countdownTimer" aria-label="Countdown to 23 October 12:00 AM">
+                            <div class="timer-box">
+                                <span class="timer-number" id="timerDays">00</span>
+                                <span class="timer-label">DAYS</span>
+                            </div>
+                            <span class="timer-divider">:</span>
+                            <div class="timer-box">
+                                <span class="timer-number" id="timerHours">00</span>
+                                <span class="timer-label">HOURS</span>
+                            </div>
+                            <span class="timer-divider">:</span>
+                            <div class="timer-box">
+                                <span class="timer-number" id="timerMinutes">00</span>
+                                <span class="timer-label">MINUTES</span>
+                            </div>
+                            <span class="timer-divider">:</span>
+                            <div class="timer-box">
+                                <span class="timer-number" id="timerSeconds">00</span>
+                                <span class="timer-label">SECONDS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edition-badge">TECHXETRA &bull; 2026</div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Scripts: Modern Lenis 1.1.18 + GSAP Core + ScrollTrigger -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Controller Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
