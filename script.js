@@ -583,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // -------------------------------------------------------------
-    // 8. COUNTDOWN TIMER ENGINE: TARGET 26 OCT 12:00 AM
+    // 8. COUNTDOWN TIMER ENGINE: TARGET 28 OCT 12:00 AM
     // -------------------------------------------------------------
     function initCountdownTimer() {
         const daysEl = document.querySelector("#timerDays");
@@ -593,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
-        // Target: 26 Oct 12:00 AM (Midnight, 00:00:00)
+        // Target: 28 Oct 12:00 AM (Midnight, 00:00:00)
         function getTargetTimestamp() {
             const now = new Date();
             let targetYear = 2026;
@@ -601,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 targetYear = now.getFullYear();
             }
             // Month 9 is October (0-indexed: 0=Jan ... 9=Oct)
-            const target = new Date(targetYear, 9, 26, 0, 0, 0, 0);
+            const target = new Date(targetYear, 9, 28, 0, 0, 0, 0);
             return target.getTime();
         }
 
